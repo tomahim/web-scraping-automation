@@ -11,9 +11,13 @@ class CollectionProperty:
         return self.properties
 
 
-@app.route('/data-collection')
+@app.route('/')
 def get_all_data_collection():
 
     return jsonify([
         elem.serialize() for elem in [CollectionProperty({'id': 'string'})]
     ])
+
+
+if __name__ == "__main__":
+    app.run()
